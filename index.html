@@ -60,7 +60,7 @@
                             <ul class="header__notify-list">
                                 <li class="header__notify-item header__notify-item--viewed">
                                     <a href="" class="header__notify-link">
-                                        <img src="http://ohui.net.vn/Files/product/Set-Son-Whoo-Mi-Glow-Lip-Balm.jpg" alt="" class="header__notify-img">
+                                        <img src="./assets/img/Set-tinh-chat-vang-Sum-losec-summa-ampoule.jpg" alt="" class="header__notify-img">
                                         <div class="header__notify-info">
                                             <span class="header__notify-name">Mỹ phẩm Ohui chính hãng sản phẩm có nguồn gốc từ thiên nhiên</span>
                                             <span class="header__notify-decription">Mô tả mỹ phẩm Ohui chính hãng ản phẩm có nguồn gốc từ thiên nhiên</span>
@@ -69,7 +69,7 @@
                                 </li>
                                 <li class="header__notify-item header__notify-item--viewed">
                                     <a href="" class="header__notify-link">
-                                        <img src="http://ohui.net.vn/Files/product/Set-Son-Whoo-Mi-Glow-Lip-Balm.jpg" alt="" class="header__notify-img">
+                                        <img src="./assets/img/Set-tinh-chat-vang-Sum-losec-summa-ampoule.jpg" alt="" class="header__notify-img">
                                         <div class="header__notify-info">
                                             <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
                                             <span class="header__notify-decription">Mô tả mỹ phẩm Ohui chính hãng</span>
@@ -78,7 +78,7 @@
                                 </li>
                                 <li class="header__notify-item">
                                     <a href="" class="header__notify-link">
-                                        <img src="http://ohui.net.vn/Files/product/Set-Son-Whoo-Mi-Glow-Lip-Balm.jpg" alt="" class="header__notify-img">
+                                        <img src="./assets/img/Set-tinh-chat-vang-Sum-losec-summa-ampoule.jpg" alt="" class="header__notify-img">
                                         <div class="header__notify-info">
                                             <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
                                             <span class="header__notify-decription">Mô tả mỹ phẩm Ohui chính hãng</span>
@@ -98,8 +98,10 @@
                        
                         <a href="app" class="header__navber-item-link">Trợ giúp</a>
                     </li>
-                    <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng ký</li>
-                    <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
+                    <button class="header__navbar-item header__navbar-item--strong 
+                    header__navbar-item--separate modal__btn js-btn-register">Đăng ký</button>
+                    <button class="header__navbar-item 
+                    header__navbar-item--strong modal__btn js-btn-login">Đăng nhập</button>
                 </ul>
             </nav>
         </div>
@@ -113,15 +115,17 @@
 
         </footer>
     </div>
-    <div class="modal">
+
+    <!--Register form-->
+    <div class="modal modal__register" >
         <div class="modal__overlay"></div>
         <div class="modal__body">      
-            <!--Authen form-->
-            <div class="auth-form">
+            
+            <div class="auth-form" id ="register-form">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__headidng"> Đăng ký</h3>
-                        <span class="auth-form__switch-btn">Đăng nhập</span>
+                        <span id="click-Login" class="auth-form__switch-btn">Đăng nhập</span>
                     </div>
                     <div class="auth-form__form">
                         <div class="auth-form__group">
@@ -142,7 +146,8 @@
                         </p>
                     </div>
                     <div class="auth-form__controls">
-                        <button class="btn auth-form__controls-back btn--normal"> TRỞ LẠI</button>
+                        <button class="btn auth-form__controls-back btn--normal js-close-modal-register"> 
+                            TRỞ LẠI</button>
                         <button class="btn btn--primary"> ĐĂNG KÝ</button>
                     </div>
                 </div>
@@ -156,8 +161,54 @@
                         <span class="auth-form__socials-label">Kết nối với Google</span>
                     </a>
                 </div>
-            </div>            
+            </div>                              
         </div>
     </div>
+
+     <!--Login form-->
+    <div class="modal modal__login">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">                      
+            <div class="auth-form" id="login-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__headidng"> Đăng nhập</h3>
+                        <span id="click-register" class="auth-form__switch-btn">Đăng ký</span>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Email của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                        </div>                       
+                    </div>
+                    <div class="auth-form__aside">
+                       <div class="auth-form__help">
+                        <a href="" class="auth-form__help-link auth-form__help-link--forgot">Quên mật khẩu</a>
+                        <span class="auth-form__help-separate"></span>
+                        <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                       </div>
+                    </div>
+                    <div class="auth-form__controls">
+                        <button class="btn auth-form__controls-back btn--normal js-close-modal-login"> 
+                            TRỞ LẠI</button>
+                        <button class="btn btn--primary"> ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+                <div class="auth-form__socials">
+                    <a href=""   class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon  fa-brands fa-facebook-square"></i>
+                        <span class="auth-form__socials-label">Kết nối với Facebook</span> 
+                    </a>
+                    <a href=""   class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                        <span class="auth-form__socials-label">Kết nối với Google</span>
+                    </a>
+                </div>
+            </div>          
+        </div>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>

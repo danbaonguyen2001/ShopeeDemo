@@ -36,6 +36,14 @@ html{
         opacity: 1;
     }
 }
+@keyframes growth{
+    from{
+       transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));    
+    }
+}
 
 /*MoDAL*/
 .modal{
@@ -44,6 +52,11 @@ html{
     right: 0;
     bottom: 0;
     left: 0;
+    display: none;
+    animation: faceIn linear 0.3s;
+    
+}
+.open{
     display: flex;
 }
 .modal__overlay{
@@ -53,9 +66,12 @@ html{
     background: rgba(0,0,0,0.4);
 }
 .modal__body{
+    --growth-from:0.7;
+    --growth-to:1;
     width: 500px; 
     margin: auto;
-    position: relative;   
+    position: relative;
+    animation: growth linear 0.1s;   
 }
 
 /*Button style*/
@@ -75,6 +91,7 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 1.6rem;
 }
 .btn.btn--size-s{
     height: 32px;
@@ -89,6 +106,10 @@ html{
 .btn.btn--primary{
     color: var(--white--color);
     background-color: var(--primary--color);
+    
+}
+.btn.btn--primary:hover{
+    opacity: 0.6;
 }
 .btn.btn--disabled{
     cursor: default;
